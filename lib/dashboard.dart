@@ -1,5 +1,7 @@
+import 'package:ASL/dict.dart';
 import 'package:flutter/material.dart';
 import './quizScreen.dart';
+import './dict.dart';
 
 class ASLDashboard extends StatelessWidget {
   @override
@@ -30,7 +32,12 @@ class ASLDashboard extends StatelessWidget {
         ),
         ElevatedButton(
           child: Text('Dictionary'),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ASLDictionary()),
+            );
+          },
           // on press go to new page or something
         ),
       ]));

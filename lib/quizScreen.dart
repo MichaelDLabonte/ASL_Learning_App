@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './quiz.dart';
+import './dashboard.dart';
 
 // things that still need to be done:
 // have images for each question
@@ -219,9 +220,20 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('You got $score/5'),
-      ),
+      body: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        Text('You got $score/5'),
+        const SizedBox(height: 400),
+        ElevatedButton(
+          child: Text('Return'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ASLDashboard()),
+            );
+          },
+          // on press go to new page or something
+        )
+      ]),
     );
   }
 }
