@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './quiz1.dart';
+import './quizScreen.dart';
+import './dashboard.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,10 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // A widget which will be started on application startup
-      home: const Scaffold(
-        body: QuestionWidget(),
-      ),
-      //home: ASLHomePage(title: 'Flutter Demo Home Page'),
+      home: ASLHomePage(title: 'ASL Home Page'),
     );
   }
 }
@@ -43,7 +41,12 @@ class ASLHomePage extends StatelessWidget {
           const SizedBox(height: 400),
           ElevatedButton(
             child: Text('Press me!'),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ASLDashboard()),
+              );
+            },
             // on press go to new page or something
           )
         ]),
