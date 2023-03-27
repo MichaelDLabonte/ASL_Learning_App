@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class Question {
   final String text;
   final List<Option> options;
+  final String imagePath;
   bool isLocked;
   Option? selectedOption;
 
   Question({
     required this.text,
     required this.options,
+    required this.imagePath,
     this.isLocked = false,
     this.selectedOption,
   });
@@ -33,6 +35,7 @@ List<Question> questions = [
       const Option(text: 'C', isCorrect: true),
       const Option(text: 'D', isCorrect: false),
     ],
+    imagePath: 'images/ASLearning-logos.jpeg',
   ),
   Question(
     text: 'What is the letter for this signs?',
@@ -42,5 +45,6 @@ List<Question> questions = [
       const Option(text: 'C', isCorrect: true),
       const Option(text: 'D', isCorrect: false),
     ],
+    imagePath: 'images/ASLearning-logos.jpeg',
   ),
 ];

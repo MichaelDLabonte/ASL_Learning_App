@@ -5,6 +5,8 @@ import './dashboard.dart';
 // things that still need to be done:
 // have images for each question
 // randomize which questions are asked
+// find way to reset answers once finished
+// find a way to prevent users from going back
 class QuizApp extends StatelessWidget {
   const QuizApp({super.key});
   // This widget is the root of your application.
@@ -86,6 +88,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
           question.text,
           style: const TextStyle(fontSize: 25),
         ),
+        Image.asset(question.imagePath),
         const SizedBox(height: 32),
         Expanded(
           child: OptionsWidget(
